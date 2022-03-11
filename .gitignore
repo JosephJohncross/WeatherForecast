@@ -1,0 +1,4 @@
+node_modules
+dist/scripts
+webpack.config.js
+webpack.config.prod.js

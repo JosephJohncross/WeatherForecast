@@ -1,0 +1,411 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+
+:root{
+    --back-day: #fff;
+    --back-image: linear-gradient(180deg, #0335576b, #fff);
+    --back-night: rgb(22, 100, 136);
+    --back-image-night: rgba(3, 53, 87, 0.42);
+    --main-color: #171750;
+
+    --f-0-5: 0.5rem;
+    --f-0-7: 0.7rem;
+    --f-1: 1rem;
+    --f-1-3: 1.3rem;
+    --f-1-5: 1.5rem;
+    --f-1-7: 1.7rem;
+    --f-2: 2rem;
+    --f-2-5: 2.5rem;
+    --f-3: 3rem;
+    --f-3-5: 3.5rem;
+    --f-4: 4rem;
+
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: var(--f-1);
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: var(--back-image);
+}
+.header{
+    background-color: var(--main-color);
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffffdc;
+    padding: var(--f-1-5);
+    margin-bottom: 0;
+    height: max-content;
+}
+.search-bar{
+    position: relative;
+}
+.search{
+    position: absolute;
+    right: 4%;
+    top: 29%;
+    cursor: pointer;
+    color: black;
+}
+.search:hover{
+    color: blue;
+}
+input{
+    padding:.3rem 1rem;
+    outline: none;
+    border-radius: 50px;
+    border: none;
+
+}
+.weather{
+    font-size: var(--f-2);
+    font-family: 'Shizuru', cursive;
+    letter-spacing: .5rem;
+}
+.country{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.main{
+    margin: 1rem auto;
+    padding: .7rem;
+    position: relative;
+    overflow-x: hidden;
+}
+.country span{
+    height: .7rem;
+    background-color: rgb(185, 185, 214);
+    width: .1rem;
+    display: block;
+}
+.side-menu{
+    height: 2rem;
+    position: sticky;
+    top: 0;
+    padding: 2rem;
+    z-index: 1000;
+}
+.navigation{
+    display: none;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+@keyframes animate-nav{
+    0%{ 
+        opacity:0;
+        transform: translate(-50%,-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+}
+.backdrop{
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .9);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+.navigation-bar ul{
+    list-style: none;
+}
+li{
+    background: var(--back-day);
+    margin: 2rem;
+    padding: var(--f-1);
+    border-radius: var(--f-1);
+    text-align: center;
+    font-size: var(--f-1-3);
+    width: max-content;
+}
+a{
+    text-decoration: none;
+    color: var(--main-color);
+    outline: none;
+}
+a:hover li{
+    background-color: var(--main-color);
+    color: var(--back-day);
+}
+.side-menu .uil{
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+ .modal{
+     margin: 1rem;
+     border-radius: .5rem;
+     background-color: var(--back-day);
+     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, .1);
+     position: relative;
+     overflow: hidden;
+ 
+ }
+ .t-modal{
+     background-image:url(/dist/images/caroline-sada-r1XwWjI4PyE-unsplash.jpg);
+     background-size: cover;
+     background-position: center top;
+     color: white;  
+ }
+ .today-info{
+     position: relative;
+     height: 100%;
+     mix-blend-mode:hard-light;
+ }
+ .location{
+    height: max-content;
+    background-color: rgba(0, 0, 0, .3);
+    font-size: var(--f-1-5);
+    padding: 1rem;
+    width: 100%;
+
+ }
+ .temperature,
+ .text,
+ .day-night{
+     padding:var(--f-1);
+     padding-bottom: var(--f-1-3);
+ }
+ .temperature{
+    font-size: var(--f-4);
+    margin-top: var(--f-1-5);
+    position: relative;
+ }
+ .temperature span{
+    position: absolute;
+    margin: 1rem 0 0 .2rem;
+    font-weight: bold;
+    width: 100%;
+ }
+ 
+ .temperature sup{
+     font-size: var(--f-1-3);
+     margin: 2rem 0 0 0;
+ }
+ .text{
+     display: block;
+     font-size: var(--f-1-3);
+ }
+ #day, #night{
+     font-size: var(--f-1-5);
+     padding-right: .4rem;
+ }
+ .modal-title{
+     position: absolute;
+     top: 0;
+     color: black;
+     left: 2%;
+     padding: var(--f-1);
+     text-align: left;
+     font-weight: 500;
+
+ }
+.forecast-summary{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(97, 96, 96);
+}
+.title{
+    margin: 1rem 0;
+    color: black;
+    font-weight: 500;
+}
+.day-period{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+    position: relative;
+}
+.morning,
+.afternoon,
+.evening,
+.overnight{
+    flex-basis: 25%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-time{
+    font-size: var(--f-1-5);
+    font-weight: 200;
+}
+.day-degree{
+    font-weight: 400;
+    font-size: var(--f-2);
+    margin-top: 1rem;
+}
+.forecast-summary .uil{
+    font-size: var(--f-3);
+    font-weight: 100;    
+}
+.uil-sun{
+    color: yellow;
+}
+.uil-sunset{
+    color: rgb(121, 117, 117);
+}
+.uil-cloud-moon{
+    color: blue;
+}
+.div1,
+.div2,
+.div3{
+    display: block;
+    position: absolute;
+    width: 3px;
+    height: 80%;
+    background-image: linear-gradient(0deg, transparent, rgb(226, 221, 221) 25%, transparent 85%);
+}
+.div1{
+    left: 25%;
+}
+.div2{
+    left: 50%;
+}
+.div3{
+    right: 25%;
+}
+
+.detailed-forecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .3fr .7fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "temp illus"
+    "detail1 detail2";
+}
+.temp-details-1{
+    grid-area: detail1;
+    display: inline-block;
+}
+.temp-details-2{
+    grid-area: detail2;
+    display: inline-block;
+}
+.temp-sunset{
+    grid-area: temp;
+}
+.modal-title{
+    grid-area: title;
+}
+.value span{
+    position: absolute;
+    font-size: var(--f-0-5);
+}
+.condition{
+    width: 90%;
+    border-bottom: 1px solid transparent;    
+    border-top: 1px solid #e2e0e0;
+    padding:0 ;
+    margin: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .5rem;     
+}
+
+.temp-sunset .temperature{
+    padding-top: 1rem;
+    margin-left: 2%;
+}
+.temp-sunset .text{
+    margin: -2rem 0 0 2%;
+    font-weight: 200;
+    font-size: var(--f-1);
+}
+.active{
+    display: block;
+}
+
+
+/* For responsiveness */
+@media screen and (max-width: 780px ) {
+    .div1,
+    .div2,
+    .div3{
+        width: 1px;
+        height: 80%;
+    }
+    .morning,
+    .afternoon,
+    .evening,
+    .overnight{
+        flex-basis: 50%;
+    }
+}
+
+@media  screen and (max-width: 500px) {
+    .main{
+        width: 100%;
+    }
+    .forecast-summary .uil{
+        font-size: var(--f-1-3);
+    }
+    .day-time{
+        font-size: var(--f-0-7);
+    }
+    .day-degree{
+        font-size: var(--f-1);
+    }
+    .day-period{
+        margin: var(--f-0-5);
+    }
+    .day-period sup{
+        font-size: var(--f-0-5);
+        margin: 2rem 0 0 0;
+    }
+    .temp-sunset .temperature{
+        font-size: var(--f-2);
+        margin-top: var(--f-1);
+    }
+    .temp-sunset .text{
+        margin: -1rem 0 0 2%;
+        font-weight: 200;
+        font-size: var(--f-0-7);
+    }
+    .temp-sunset .temperature span{
+        top: 0;
+    }
+    .detailed-forecast{
+        grid-template-rows: .2fr .2fr 1fr;
+    }
+    .condition{
+        width: 90%;
+        margin: .5rem;
+        padding-top: .5rem;
+        font-size: var(--f-0-5);
+        flex-direction: column;
+        justify-content: center;
+    }
+}

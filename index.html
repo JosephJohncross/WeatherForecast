@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/src/App.js" async type="module"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons-core.min.css"> -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0" defer></script> -->
+    <link rel="stylesheet" href="/dist/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <section class="header">
+
+      <header>
+        <div class="weather">Weather</div>
+        <div class="search-bar" role="searchbox">
+          <input type="text" placeholder="Location or Zipcode" class="form-control" id="city">
+          <ion-icon name="search" class="search"></ion-icon>
+        </div>
+        <div class="country">
+          <ion-icon name="earth" size="small"></ion-icon>
+          <p></p>
+          <span></span>
+          <p><sup>o</sup>C</p>
+        </div>
+      </header>
+
+      
+      <div class="navigation">
+        <nav class="navigation-bar">
+          <ul>
+            <a href="/hourly-forecast.html"><li>Hourly forecast</li></a>
+            <a href=""><li>Daily forecast</li></a>
+            <a href=""><li>Radar</li></a>
+          </ul>
+        </nav>
+      </div>
+      <div class="backdrop"></div>
+    </section>
+
+    <div class="side-menu">
+      <i class="uil uil-bars" draggable="true"></i>
+    </div>
+
+
+    <section class="main">
+      <main>
+        
+      </main>
+    </section>
+  </body>
+</html>
