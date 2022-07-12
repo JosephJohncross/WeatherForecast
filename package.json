@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "core-js": "^3.21.1",
-    "logrocket": "^2.2.0",
     "sanitize-html": "^2.7.0"
   }
 }
