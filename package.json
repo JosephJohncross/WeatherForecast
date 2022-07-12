@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "build:prod": "webpack --config webpack.config.prod.js --watch"
+    "build:prod": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "Joseph Ibochi",
